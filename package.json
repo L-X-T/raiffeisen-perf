@@ -24,8 +24,10 @@
     "@angular/router": "14.2.3",
     "@briebug/jest-schematic": "^4.0.0",
     "angular-oauth2-oidc": "^13.0.1",
+    "anychart": "^8.11.0",
     "bootstrap": "^4.6.2",
     "core-js": "^2.6.12",
+    "moment": "^2.29.4",
     "rxjs": "^6.6.7",
     "tslib": "^2.0.3",
     "zone.js": "~0.11.8"

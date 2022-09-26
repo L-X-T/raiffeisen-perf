@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Flight } from '../../entities/flight';
 import { FlightService } from '../shared/services/flight.service';
 
-import { Observable, Observer, Subject, Subscription } from 'rxjs';
+import { Observable, Observer, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { pattern } from '../../shared/global';
 
@@ -23,10 +23,10 @@ export class FlightSearchComponent implements OnInit, OnDestroy {
 
   flights: Flight[] = [];
   flights$: Observable<Flight[]>;
-  flightsSubscription: Subscription;
+  // flightsSubscription: Subscription;
 
   selectedFlight: Flight;
-  flightToEdit: Flight;
+  // flightToEdit: Flight;
   pattern = pattern;
 
   message: string;
@@ -85,12 +85,12 @@ export class FlightSearchComponent implements OnInit, OnDestroy {
     });
   }*/
 
-  updateFlight(updatedFlight: Flight): void {
+  /*updateFlight(updatedFlight: Flight): void {
     // console.warn('FlightSearchComponent - updateFlight()');
     // console.log(updatedFlight);
 
     this.flights = this.flights.map((flight) => (flight.id === updatedFlight.id ? updatedFlight : flight));
-  }
+  }*/
 
   onEdit(id: number): void {
     this.router.navigate(['/flight-edit', id, { showDetails: true }]);
