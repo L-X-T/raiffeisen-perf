@@ -47,6 +47,11 @@ If possible try to fix the issues of the `web property` or else write a friendly
 
     ```
    npm install serve -g
+    ```
+
+   Now switch the directory containing the build (e.g. dist/performance in this workspace) and run:
+  
+    ```
    serve -s
     ```
 
