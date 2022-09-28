@@ -61,7 +61,7 @@ Using the webpack-bundle-analyzer one can have a look at a bundle's content. In 
 
 3. Analyze your bundles:
     ```
-    cd dist/flight-app
+    cd dist/performance
     webpack-bundle-analyzer stats.json
     ```
 
@@ -78,7 +78,7 @@ Using the webpack-bundle-analyzer one can have a look at a bundle's content. In 
 6. Analyze these bundles too and compare it to the former bundles:
 
     ```
-    cd dist/flight-app
+    cd dist/performance
     webpack-bundle-analyzer stats.json
     ```
 
@@ -167,61 +167,14 @@ Keep in mind that lazy loading only works if the module in question isn't refere
     </p>
     </details>
 
-4. Open the file `flight-booking.routes.ts` and change the path for the first route to an empty string (`path: ''`) to make this route the default route that is activated after lazy loading the module. Put your other routes (flight-edit and passenger-search) into the children array.
+4. Make sure your sidebar link to flight-search and passenger-search still works (something like `routerLink="/flight-booking/flight-search"`).
 
-    <details>
-    <summary>Show Code</summary>
-    <p>
+5. Also make sure your `Edit` Button in your `FlightCardComponent` still works (try adding two dots like `[routerLink]="['../flight-edit', ...`).
 
-    ```typescript
-
-    export const FLIGHT_BOOKING_ROUTES: Routes = [
-    {
-        path: '',
-        component: FlightBookingComponent,
-        [...],
-        children: [
-            [...]
-        ]
-    }
-    ];
-    [...]
-    ```
-    </p>
-    </details>
-
-5. In the file ``flight-booking.routes.ts`` deactivate your ``AuthGuard`` (if you have created one in an exercise before):
-
-    <details>
-    <summary>Show code</summary>
-    <p>
-
-    ```TypeScript
-
-    export const FLIGHT_BOOKING_ROUTES: Routes = [
-    {
-        path: '',
-        component: FlightBookingComponent,
-        // canActivate: [AuthGuard], // <-- Comment this line out
-        children: [
-            [...]
-        ]
-    }
-    ```
-
-    </p>
-    </details>
-
-   This is necessary because in the current project there is an issue with lazy loading and shared services. We will deal with it later.
-
-6. Make sure your sidebar link to flight-search and passenger-search still works (something like `routerLink="/flight-booking/flight-search"`).
-
-7. Also make sure your `Edit` Button in your `FlightCardComponent` still works (try adding two dots like `[routerLink]="['../flight-edit', ...`).
-
-8. Find out that webpack splits off an own chunk for the `FlightBookingModule` after implementing lazy loading.
+6. Find out that webpack splits off an own chunk for the `FlightBookingModule` after implementing lazy loading.
    If this works, you will see another chunk at the console (e. g.  `flight-booking-flight-booking-module.js` depending on the used version of the CLI)
 
-9. Try it out in the browser and use the network tab within the dev tools (F12) to make sure that it is only loaded on demand.
+7. Try it out in the browser and use the network tab within the dev tools (F12) to make sure that it is only loaded on demand.
    If it doesn't work, have a look to the console tab within the dev tools.
 
 ### Implementing Preloading
