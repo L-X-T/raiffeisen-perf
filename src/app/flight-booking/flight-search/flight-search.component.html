@@ -54,10 +54,16 @@
       </flight-validation-errors>
 
       <div class="form-group">
-        <button
-          [disabled]="!to || !from || flightSearchForm.invalid || flightSearchForm.pending"
-          (click)="search()"
-          class="btn btn-default">Search</button>
+        <button class="btn btn-default"
+                [disabled]="!to || !from || flightSearchForm.invalid || flightSearchForm.pending"
+                (click)="search()">
+          Search
+        </button>
+
+        <button *ngIf="flights.length > 0" class="btn btn-default" style="margin-left: 10px"
+                (click)="delayFirstFlight()">
+          Delay 1st Flight
+        </button>
       </div>
     </form>
   </div>
