@@ -4,7 +4,7 @@
   </div>
 
   <div class="content">
-    <form #flightSearchForm="ngForm" [roundTrip]="['from','to']" [asyncMulti]="['from','to']">
+    <form #flightSearchForm="ngForm" [roundTrip]="['from','to']">
       <div class="form-group">
         <label>From:</label>
         <input [(ngModel)]="from"
@@ -15,11 +15,10 @@
                required="required"
                [minlength]="minLength"
                [maxlength]="maxLength"
-               [pattern]="pattern"
-               asyncCity>
+               [pattern]="pattern">
       </div>
 
-      <div *ngIf="flightSearchForm?.controls['from']?.pending">... Executing Async Validator ...</div>
+      <!--<div *ngIf="flightSearchForm?.controls['from']?.pending">... Executing Async Validator ...</div>-->
 
       <flight-validation-errors fieldLabel="From"
                                 [errors]="flightSearchForm.controls.from?.errors"
@@ -39,7 +38,7 @@
                [city]="['Graz', 'Salzburg', 'Hamburg', 'München']">
       </div>
 
-      <div *ngIf="flightSearchForm?.controls['to']?.pending">... Executing Async Validator ...</div>
+      <!--<div *ngIf="flightSearchForm?.controls['to']?.pending">... Executing Async Validator ...</div>-->
 
       <flight-validation-errors fieldLabel="To"
                                 [errors]="flightSearchForm.controls.to?.errors"
@@ -47,7 +46,7 @@
                                 [maxLength]="maxLength">
       </flight-validation-errors>
 
-      <div *ngIf="flightSearchForm?.pending">... Executing Async Multi Field Validator ...</div>
+      <!--<div *ngIf="flightSearchForm?.pending">... Executing Async Multi Field Validator ...</div>-->
 
       <flight-validation-errors fieldLabel="Form"
                                 [errors]="flightSearchForm?.errors">

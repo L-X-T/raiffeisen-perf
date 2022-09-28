@@ -15,8 +15,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./flight-search.component.css']
 })
 export class FlightSearchComponent implements OnInit, OnDestroy {
-  from = 'Graz';
-  to = 'Hamburg';
+  from = 'Hamburg';
+  to = 'Graz';
 
   minLength = 3;
   maxLength = 15;
