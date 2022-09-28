@@ -19,7 +19,7 @@ import { APP_ROUTES } from './app.routes';
     RouterModule.forRoot(APP_ROUTES, {
       // useHash: true,
       // enableTracing: true,
-      preloadingStrategy: PreloadAllModules
+      // preloadingStrategy: PreloadAllModules
     })
   ],
   declarations: [AppComponent, SidebarComponent, NavbarComponent, HomeComponent],

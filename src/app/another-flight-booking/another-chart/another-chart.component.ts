@@ -5,11 +5,11 @@ import { DemoDataService } from '../../shared/demo-data.service';
 import 'anychart';
 
 @Component({
-  selector: 'app-chart',
-  templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.scss']
+  selector: 'app-another-chart',
+  templateUrl: './another-chart.component.html',
+  styleUrls: ['./another-chart.component.scss']
 })
-export class ChartComponent implements OnInit, AfterViewInit {
+export class AnotherChartComponent implements OnInit, AfterViewInit {
   @Input() id = 0;
   @Input() data = 'data1';
 
