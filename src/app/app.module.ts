@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 
 // import { FlightBookingModule } from './flight-booking/flight-booking.module';
 
@@ -15,12 +15,12 @@ import { APP_ROUTES } from './app.routes';
 @NgModule({
   imports: [
     BrowserModule,
-    HttpClientModule,
-    // FlightBookingModule,
-    RouterModule.forRoot(
-      APP_ROUTES
-      // { useHash: true, enableTracing: true }
-    )
+    HttpClientModule, // FlightBookingModule,
+    RouterModule.forRoot(APP_ROUTES, {
+      // useHash: true,
+      // enableTracing: true,
+      preloadingStrategy: PreloadAllModules
+    })
   ],
   declarations: [AppComponent, SidebarComponent, NavbarComponent, HomeComponent],
   bootstrap: [AppComponent]
