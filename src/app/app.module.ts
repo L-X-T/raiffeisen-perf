@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { FlightBookingModule } from './flight-booking/flight-booking.module';
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -20,7 +21,8 @@ import { APP_ROUTES } from './app.routes';
     RouterModule.forRoot(
       APP_ROUTES
       // { useHash: true, enableTracing: true }
-    )
+    ),
+    SharedModule
   ],
   declarations: [AppComponent, SidebarComponent, NavbarComponent, HomeComponent],
   bootstrap: [AppComponent]

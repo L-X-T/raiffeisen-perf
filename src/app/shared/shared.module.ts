@@ -8,6 +8,6 @@ import { LazyImageDirective } from './directives/lazy-image.directive';
 @NgModule({
   imports: [CommonModule, FormsModule],
   declarations: [CityPipe, LazyImageDirective],
-  exports: [CityPipe, FormsModule]
+  exports: [CityPipe, LazyImageDirective, FormsModule]
 })
 export class SharedModule {}
